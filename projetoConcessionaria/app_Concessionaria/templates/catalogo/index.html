@@ -1,0 +1,180 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Título</title>
+    <link rel="icon" href="{% static 'logo-misters.png' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="{% static 'catalogo/styles/style.css' %}">
+    <script src="{% static 'catalogo/js/active-filter.js' %}"></script>
+    <script src="{% static 'catalogo/js/color-label.js' %}"></script>
+</head>
+<body>
+    <input type="checkbox" id="check" name="check">
+    <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+    </label>
+
+    <label for="user">
+        <a href="#"><i class="fas fa-user user-icon" id="user"></i></a>
+    </label>
+
+    <div class="sidebar">
+
+        <header>Menu</header>
+       
+        <hr>
+    
+        <a href="/" class="link-sidebar active">
+    
+          <span>Home</span>
+        </a>
+    
+        <hr>
+    
+        <a href="/catalogo/" class="link-sidebar">
+    
+          <span>Catálogo</span>
+        </a>
+    
+        <hr>
+    
+        <a href="/quem_somos/" class="link-sidebar">
+    
+          <span>Quem somos</span>
+        </a>
+    
+        <hr>
+    
+        <a href="/servicos/" class="link-sidebar">
+    
+          <span>Serviços</span>
+        </a>
+    
+        <hr>
+    
+        <a href="#" class="link-sidebar">
+    
+          <span>Contato</span>
+        </a>
+    
+      </div>
+
+    <div class="container">
+        <aside>
+            <h2>Filtros</h2>
+            <form id="filter-form" method="GET" action="{% url 'catalogo' %}">
+                <div id="active-filters" class="filter-group" {% if marca_selecionada or ano_selecionado or condicao_selecionada or cor_selecionada %}{% else %}style="display: none;"{% endif %}>
+                    {% if marca_selecionada and marca_selecionada != 'todos' %}
+                    <div class="active-filter">
+                        {{ marca_selecionada }} <span class="remove-filter" data-type="marca">X</span>
+                    </div>
+                    {% endif %}
+                    {% if ano_selecionado and ano_selecionado != 'todos' %}
+                    <div class="active-filter">
+                        {{ ano_selecionado }} <span class="remove-filter" data-type="ano">X</span>
+                    </div>
+                    {% endif %}
+                    {% if condicao_selecionada and condicao_selecionada != 'todos' %}
+                    <div class="active-filter">
+                        {{ condicao_selecionada }} <span class="remove-filter" data-type="condicao">X</span>
+                    </div>
+                    {% endif %}
+                    {% if cor_selecionada and cor_selecionada != 'todos' %}
+                    <div class="active-filter">
+                        {{ cor_selecionada }} <span class="remove-filter" data-type="cor">X</span>
+                    </div>
+                    {% endif %}
+                </div>
+            
+                <div class="filter-group">
+                    <label for="marca">Marca:</label>
+                    <select id="marca" name="marca">
+                        <option value="todos" {% if not marca_selecionada or marca_selecionada == 'todos' %}selected{% endif %}>Todos</option>
+                        {% for marca in marcas %}
+                            <option value="{{ marca }}" {% if marca == marca_selecionada %}selected{% endif %}>{{ marca }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="ano">Ano:</label>
+                    <select id="ano" name="ano">
+                        <option value="todos" {% if not ano_selecionado or ano_selecionado == 'todos' %}selected{% endif %}>Todos</option>
+                        {% for ano in anos %}
+                            <option value="{{ ano }}" {% if ano == ano_selecionado %}selected{% endif %}>{{ ano }}</option>
+                        {% endfor %}
+                    </select>                    
+                </div> 
+                
+                
+                <div class="filter-group">
+                    <label for="condicao">Condição:</label>
+                    <select id="condicao" name="condicao">
+                        <option value="todos" {% if not condicao_selecionada or condicao_selecionada == 'todos' %}selected{% endif %}>Todos</option>
+                        {% for status_code, status_desc in condicoes %}
+                            <option value="{{ status_code }}" {% if status_code == condicao_selecionada %}selected{% endif %}>{{ status_desc }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="cor">Cor:</label>
+                    <div class="color-options">
+                        {% for cor, cor_hex in cores %}
+                            <input type="radio" id="cor_{{ forloop.counter }}" name="cor" value="{{ cor }}" {% if cor == cor_selecionada %}checked{% endif %}>
+                            <label for="cor_{{ forloop.counter }}" style="background-color: {{ cor_hex }}"></label>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                
+                
+                <button type="submit">Filtrar</button>
+            </form>
+        </aside>
+
+        <main>
+            <h2>Carros Disponíveis</h2>
+            <div class="car-list">
+                <!-- Adicione carros dinamicamente aqui -->
+                {% for carro in carros %}
+                    <div class="car">
+                        <div class="car-content">
+                            <img src="{{ carro.carro_foto.url }}" alt="{{ carro.carro_modelo }}">
+                            <div class="car-info">
+                                <h3>{{ carro.carro_modelo }}</h3>
+                                <p><strong>Marca:</strong> {{ carro.carro_marca }}</p>
+                                <p><strong>Ano:</strong> {{ carro.carro_ano }}</p>
+                                <p><strong>Cor:</strong> {{ carro.carro_cor }}</p>
+                                <p><strong>Status:</strong> {{ carro.get_carro_status_display }}</p>
+                                <h3 id="car-value">R$ {{carro.carro_valor}}</h3>
+                                <a href="{% url 'detalhe_carro' carro.carro_id %}">
+                                    <button class="button-purchase">VER MAIS</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>            
+        </main>
+    </div>
+    <div class="rodape">
+        <div class="redes_sociais">
+            <a href=""><img src="{% static 'compra/img/instagram.png' %}" alt=""></a>
+            <a href=""><img src="{% static 'compra/img/facebook.png' %}" alt=""></a>
+            <a href=""><img src="{% static 'compra/img/twiter.png' %}" alt=""></a>
+        </div>
+        <div class="rodape_info">
+            <a href="">Termo de uso</a>
+            <a href="">Política de privacidade</a>
+        </div>
+        <p>Todos os direitos reservados</p>
+        <p>@2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ carro.carro_marca }} {{ carro.carro_modelo }}</title>
+    <link rel="stylesheet" href="{% static 'compra/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <label for="user">
+        <a href="#"><i class="fas fa-user user-icon" id="user"></i></a>
+    </label>
+    <div class="sidebar">
+        <header>Menu</header>
+        <hr>
+        <a href="/" class="link-sidebar active"><span>Home</span></a>
+        <hr>
+        <a href="/catalogo/" class="link-sidebar"><span>Catálogo</span></a>
+        <hr>
+        <a href="/quem_somos/" class="link-sidebar"><span>Quem somos</span></a>
+        <hr>
+        <a href="/servicos/" class="link-sidebar"><span>Serviços</span></a>
+        <hr>
+        <a href="#" class="link-sidebar"><span>Contato</span></a>
+    </div>
+    <!-- Sidebar -->
+
+    <div class="container">
+        <div class="carro">
+            <div class="imagem_container">
+                <img src="{{ carro.carro_foto.url }}" alt="{{ carro.carro_modelo }}">
+            </div>
+            <div class="informacoes">
+                <div class="nome_marca">
+                    <h2>{{ carro.carro_marca }}</h2>
+                    <h1>{{ carro.carro_modelo }}</h1>
+                    <h3>{{ carro.carro_ano }}</h3>
+                    <p>KM: {{ carro.carro_km }}</p>
+                </div>
+                <div class="subinformacoes">
+                    <div class="esquerda">
+                        <h1>CÂMBIO</h1>
+                        <p>{{ carro.get_carro_cambio_display }}</p>
+                        <h1>COMBUSTÍVEL</h1>
+                        <p>{{ carro.get_carro_combustivel_display }}</p>
+                    </div>
+                    <div class="direita">
+                        <h1>COR</h1>
+                        <p>{{ carro.carro_cor }}</p>
+                        <h1>CIDADE</h1>
+                        <p>{{ carro.carro_cidade }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="botao">
+                <a href="#"><button>COMPRAR</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <div class="descricao_texto">
+            <h1>DESCRIÇÃO</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi tenetur aliquam alias eum hic. Delectus reiciendis autem mollitia! Deserunt, corrupti fuga. Ipsum expedita aperiam dignissimos in labore, officiis praesentium modi officia voluptas fugiat recusandae provident nesciunt debitis excepturi reprehenderit hic. Ea ullam aliquam nesciunt inventore! Doloremque aut incidunt ea iusto quo possimus velit dolor. Saepe, omnis totam dolorem rerum quam porro repellendus quidem perferendis minus. Mollitia fugiat eligendi necessitatibus expedita quia, quasi quas dolorem ea error unde, nulla autem repudiandae, officia molestiae ducimus nam? Quod esse perferendis, corporis est, earum impedit atque, ea assumenda animi dolore sit facere facilis dignissimos?</p>
+            <p><strong>Anunciado em:</strong> {{ carro.carro_cadastro_em }}</p>
+          </div>
+    </div>
+
+    <div class="rodape">
+        <div class="redes_sociais">
+            <a href=""><img src="{% static 'compra/img/instagram.png' %}" alt=""></a>
+            <a href=""><img src="{% static 'compra/img/facebook.png' %}" alt=""></a>
+            <a href=""><img src="{% static 'compra/img/twiter.png' %}" alt=""></a>
+        </div>
+        <div class="rodape_info">
+            <a href="">Termo de uso</a>
+            <a href="">Política de privacidade</a>
+        </div>
+        <p>Todos os direitos reservados</p>
+        <p>@2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,468 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+nav {
+    padding: 10px 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    margin: 20px auto; /* Adiciona margem ao redor do container */
+    align-items: flex-start; /* Alinha itens ao topo */
+}
+
+aside {
+    width: 20%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 71.8px; /* Remove qualquer margem superior do aside */
+}
+
+aside h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    background-color: #fff;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.filter-group button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filter-group button:hover {
+    background-color: #555;
+}
+
+.filter-group::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.active-filter {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+.active-filter:hover {
+    background-color: #e0e0e0; /* Altera a cor de fundo ao passar o mouse */
+}
+
+
+.color-options {
+    display: flex;
+    gap: 5px;
+}
+
+.color-options input[type="radio"] {
+    display: none;
+}
+
+.color-options label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    cursor: pointer;
+}
+
+.color-options label:hover {
+    border-width: 3px;
+}
+
+.color-options input[type="radio"]:checked + label {
+    border-width: 3px;
+}
+
+.color-ball {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+main {
+    width: 78%;
+    margin-left: 2%; /* Adiciona espaço entre aside e main */
+}
+
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Alinha itens ao topo */
+    gap: 20px;
+}
+
+.car {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-content {
+    min-width: 315px;
+    padding: 20px;
+}
+
+.button-purchase {
+    display: block;
+    width: calc(100% - 1.5px);
+    margin: 20px auto 0; /* Centraliza o botão horizontalmente */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.car img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.car-info {
+    margin-top: 20px;
+}
+
+.car-info h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.car-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#car-value {
+    font-size: 1.7rem; /* Aumenta significativamente o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-top: 10px; /* Adiciona um espaço acima do preço */
+    margin-bottom: -5px;
+}
+
+
+/* Geral */
+body {
+    margin: 0;
+  }
+  
+  :root {
+    --accent-color: #fff;
+    --gradient-color: #FBFBFB;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    margin-top: -20px;
+    position: fixed;
+    z-index: 999;
+    width: 240px;
+    left: -240px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all .5s ease;
+  }
+  
+  .sidebar header {
+    font-size: 28px;
+    color: #ffffff;
+    line-height: 70px;
+    text-align: center;
+    background-color: transparent;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .sidebar .link-sidebar {
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: #ffffff;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 5px solid transparent;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    transition: all .5s ease;
+  }
+  
+  .link-sidebar:hover {
+    border-left: 5px solid #000;
+    color: #000000;
+    background: #f7ede3;
+  }
+  
+  .sidebar .link-sidebar i {
+    font-size: 23px;
+    margin-right: 16px;
+  }
+  
+  .sidebar .link-sidebar span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* Checkbox */
+  #check {
+    display: none;
+  }
+  
+  /* Botões do menu */
+  label #btn,
+  label #cancel {
+    position: fixed;
+    z-index: 999;
+    left: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 0px 30px;
+    font-size: 35px;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    transition: all .5s ease;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  label #cancel {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #check:checked ~ .sidebar {
+    left: 0;
+  }
+  
+  #check:checked ~ label #btn {
+    margin-left: 245px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #check:checked ~ label #cancel {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Ícone do usuário */
+  label #user {
+    position: fixed;
+    z-index: 999;
+    right: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 30px 30px;
+    font-size: 35px;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    transition: all .5s ease;
+    top: -1.9px;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  /* Responsividade */
+  @media(max-width : 860px) {
+    .sidebar {
+      height: auto;
+      width: 70px;
+      left: 0;
+      margin: 100px 0;
+    }
+  
+    header,
+    #btn,
+    #cancel {
+      display: none;
+    }
+  
+    span {
+      position: absolute;
+      margin-left: 23px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  
+    .sidebar .link-sidebar {
+      height: 60px;
+    }
+  
+    .sidebar .link-sidebar i {
+      margin-left: -10px;
+    }
+  
+    .link-sidebar:hover {
+      width: 200px;
+      background: inherit;
+    }
+  
+    .sidebar .link-sidebar:hover span {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+/*Rodapé */
+.rodape {
+  margin-top: 10vh;
+  height: 32vh;
+  width: 100%;
+  background-color: black;
+  display: block;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.redes_sociais {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+}
+
+.redes_sociais img{
+  width: 80px;
+  border-radius: 100px;
+  margin-bottom: 25px;
+  transition: .09s;
+}
+
+.redes_sociais img:hover{
+  transform: scale(1.1);
+}
+
+.rodape p{
+  color: white;
+  font-size: 20px;
+  text-indent: 0px;
+}
+
+.rodape_info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rodape_info a{
+  color: white;
+  font-size: 20px;
+}
+
+.rodape_logo img{
+  width: 110px;
+  margin-bottom: 25px;
+}

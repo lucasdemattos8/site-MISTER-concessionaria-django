@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>entregador</title>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="{% static 'home/style/style.css' %}">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <!--Links das Fontes e dos Icones-->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <script src="{% static 'home/js/script.js' %}"></script>
+</head>
+
+<body>
+
+  <input type="checkbox" id="check" name="check">
+
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+
+  <label for="user">
+    <a href="#"><i class="fas fa-user user-icon" id="user"></i></a>
+  </label>
+
+  <div class="overlay">
+    <h1>MISTERS MOTORS</h1>
+  </div>
+
+  <div class="sidebar">
+
+    <header>Menu</header>
+
+    <hr>
+
+    <a href="/" class="link-sidebar active">
+
+      <span>Home</span>
+    </a>
+
+    <hr>
+
+    <a href="catalogo/" class="link-sidebar active">
+
+      <span>Catálogo</span>
+    </a>
+
+    <hr>
+
+    <a href="#" class="link-sidebar">
+
+      <span>Sobre</span>
+    </a>
+
+    <hr>
+
+    <a href="servicos/" class="link-sidebar">
+
+      <span>Serviços</span>
+    </a>
+
+    <hr>
+
+    <a href="#" class="link-sidebar">
+
+      <span>Contato</span>
+    </a>
+
+  </div>
+  <!--Sidebar-->
+
+  <div class="video-container">
+    <video autoplay loop src="{% static 'home/background-video.mp4' %}" width="100%" id="bg-video"></video>
+  </div>
+  <br><br>
+  <!--==================================================================-->
+
+  <!-- Marcas -->
+
+  <h1> Marcas Parceiras </h1>
+  <div class="marcas-container">
+    <div id="marca1">
+      <a href="https://www.porsche.com/brazil/pt/"><img src="{% static 'home/img/marcas/fiat-logo.png' %}" alt="">
+    </div>
+    <div id="marca2">
+      <a href="https://www.porsche.com/brazil/pt/"><img src="{% static 'home/img/marcas/porsche-logo.png' %}" alt="">
+    </div>
+    <div id="marca3">
+      <a href="https://www.porsche.com/brazil/pt/"><img src="{% static 'home/img/marcas/audi-logo.png' %}" alt="">
+    </div>
+    <div id="marca4">
+      <a href="https://www.porsche.com/brazil/pt/"><img src="{% static 'home/img/marcas/volkswagen-logo.png' %}"
+          alt=""></a>
+    </div>
+  </div>
+
+  <!-- Modelos -->
+  <h1>Modelos</h1>
+  <div class="modelos-container">
+    <div id="modelos1">
+      <h2>OLD</h2>
+      <img src="{% static 'home/img/carro-modelo1.jpg' %}" alt="">
+      <h1>This is Cutlass</h1>
+      <button> Saiba mais sobre o modelo</button>
+    </div>
+    <div id="modelos2">
+      <h2>CLASSIC</h2>
+      <img src="{% static 'home/img/carro-modelo2.jpg' %}" alt="">
+      <h1>Alto desempenho da tecnologia quattro.</h1>
+      <button> Saiba mais sobre o modelo </button>
+    </div>
+  </div>
+  <div class="modelos-container">
+    <div id="modelos1">
+      <h2>SPORT</h2>
+      <img src="{% static 'home/img/porsche-modelo.jpg' %}" alt="">
+      <h1>Sedan esportivo de luxo.</h1>
+      <button> Saiba mais sobre o modelo</button>
+    </div>
+    <div id="modelos2">
+      <h2>SUV</h2>
+      <img src="{% static 'home/img/carro-modelo-3.jpeg' %}" alt="">
+      <h1>O SUV que você estava esperando.</h1>
+      <button> Saiba mais sobre o modelo </button>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br>
+  <footer>
+    <p>&copy; 2024 MISTERS. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>

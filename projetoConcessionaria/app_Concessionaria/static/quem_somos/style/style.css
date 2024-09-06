@@ -1,0 +1,411 @@
+
+body {
+    margin: 0;
+    background-color: #f7ede3;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* SLIDE BAR */
+
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  :root {
+    --accent-color: #fff;
+    --gradient-color: #FBFBFB;
+  
+  }
+  
+  .video-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: whitesmoke;
+    z-index: 1;
+  }
+  
+  .overlay h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    text-shadow: 0 0 3px #000;
+    color: #ffffff;
+  }
+  
+  .user-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  .sidebar {
+  
+    position: fixed;
+    z-index: 999;
+    width: 240px;
+    left: -240px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all .5s ease;
+  
+  }
+  
+  .sidebar header {
+    font-size: 28px;
+    color: #ffffff;
+    line-height: 70px;
+    text-align: center;
+    background-color: transparent;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+  
+  }
+  
+  .sidebar .link-sidebar {
+  
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: #ffffff;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 5px solid transparent;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    transition: all .5s ease;
+  }
+  
+  .link-sidebar:hover {
+    border-left: 5px solid #000;
+    color: #000000;
+    background: #f7ede3
+  }
+  
+  .sidebar .link-sidebar i {
+    font-size: 23px;
+    margin-right: 16px;
+  }
+  
+  .sidebar .link-sidebar span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  label #btn,
+  label #cancel {
+    position: fixed;
+    z-index: 999;
+    left: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 30px 30px;
+    margin-left: 30px;
+    font-size: 35px;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    transition: all .5s ease;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  label #user {
+    position: fixed;
+    z-index: 999;
+    right: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 30px 30px;
+    margin-left: 30px;
+    font-size: 35px;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    transition: all .5s ease;
+    top: -1.9px;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  label #cancel {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #check:checked~.sidebar {
+    left: 0;
+  }
+  
+  #check:checked~label #btn {
+    margin-left: 245px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #check:checked~label #cancel {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #check:checked~label #user {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @media(max-width : 860px) {
+  
+    .sidebar {
+        height: auto;
+        width: 70px;
+        left: 0;
+        margin: 100px 0;
+    }
+  
+    header,
+    #btn,
+    #cancel {
+        display: none;
+    }
+  
+    span {
+        position: absolute;
+        margin-left: 23px;
+        opacity: 0;
+        visibility: hidden;
+    }
+  
+    .sidebar .link-sidebar {
+        height: 60px;
+    }
+  
+    .sidebar .link-sidebar i {
+        margin-left: -10px;
+    }
+  
+    .link-sidebar:hover {
+        width: 200px;
+        background: inherit;
+    }
+  
+    .sidebar .link-sidebar:hover span {
+        opacity: 1;
+        visibility: visible;
+    }
+  
+  }
+  
+
+
+/* QUEM SOMOS */
+
+
+
+
+.fundo img {
+    width: 100%;
+
+
+}
+
+.fundo {
+    display: inline-block;
+    position: relative;
+}
+
+.fundo h2{
+    position: absolute;
+    top: 255px;
+    left: 200px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 15px 15px 10px rgb(48, 48, 48);
+
+}
+
+.fundo h1 {
+    position: absolute;
+    top: 290px;
+    left: 200px;
+    font-size: 95px;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 15px rgb(36, 36, 36);
+
+}
+
+/* CONTEÚDO QUEM SOMOS NÓS */
+
+.conteudo_quem_somos{
+    margin: 0px;
+    color: white;
+}
+
+/* ----------------- */
+
+.topicos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5.5vh;
+    margin-top: 120px;
+
+}
+
+#topico1{
+    height: 45vh;
+    width: 50vh;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+    display: block;
+
+
+}
+
+#topico2{
+    height: 45vh;
+    width: 50vh;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+}
+
+#topico3{
+    height: 45vh;
+    width: 50vh;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+}
+
+.numero_quem_somos{
+    height: 13vh;
+    width: 13vh;
+    border-radius: 100px;
+    background-color: #950000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: bold;
+    position: relative;
+    left: -30px;
+    top: -30px;
+
+}
+
+.texto_quem_somos{
+    display: block;
+    margin: -65px 60px 0px 60px;
+    font-size: 18px;
+    text-indent: 30px;
+
+}
+
+.texto_quem_somos h1{
+    color: #950000;
+    text-align: center;
+}
+
+/* ----------------- */
+
+
+/* SIGNIFICADO NOME */
+
+.significado_nome {
+    color: #950000;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 28px;
+}
+
+
+
+
+.significado_nome img{
+    height: 70vh;
+
+}
+
+
+
+
+
+/*Rodapé */
+.rodape {
+    margin-top: 10vh;
+    height: 32vh;
+    width: 100%;
+    background-color: black;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.redes_sociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.redes_sociais img{
+    width: 80px;
+    border-radius: 100px;
+    margin-bottom: 25px;
+    transition: .09s;
+}
+
+.redes_sociais img:hover{
+    transform: scale(1.1);
+}
+
+.rodape p{
+    color: white;
+    font-size: 20px;
+    text-indent: 0px;
+}
+
+.rodape_info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape_info a{
+    color: white;
+    font-size: 20px;
+}
+
+.rodape_logo img{
+    width: 110px;
+    margin-bottom: 25px;
+}

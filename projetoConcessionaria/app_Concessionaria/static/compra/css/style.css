@@ -1,0 +1,434 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    margin: 0px;
+}
+
+/* SLIDE BAR */
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  :root {
+    --accent-color: #fff;
+    --gradient-color: #FBFBFB;
+  
+  }
+  
+  .video-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: whitesmoke;
+    z-index: 1;
+  }
+  
+  .overlay h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    text-shadow: 0 0 3px #000;
+    color: #ffffff;
+  }
+  
+  .user-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  .sidebar {
+  
+    position: fixed;
+    z-index: 999;
+    width: 240px;
+    left: -240px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all .5s ease;
+  
+  }
+  
+  .sidebar header {
+    font-size: 28px;
+    color: #ffffff;
+    line-height: 70px;
+    text-align: center;
+    background-color: transparent;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+  
+  }
+  
+  .sidebar .link-sidebar {
+  
+    display: block;
+    height: 65px;
+    width: 100%;
+    color: #ffffff;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-left: 5px solid transparent;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    transition: all .5s ease;
+  }
+  
+  .link-sidebar:hover {
+    border-left: 5px solid #000;
+    color: #000000;
+    background: #f7ede3
+  }
+  
+  .sidebar .link-sidebar i {
+    font-size: 23px;
+    margin-right: 16px;
+  }
+  
+  .sidebar .link-sidebar span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  label #btn,
+  label #cancel {
+    position: fixed;
+    z-index: 999;
+    left: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 30px 30px;
+    margin-left: 30px;
+    font-size: 35px;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    transition: all .5s ease;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  label #user {
+    position: fixed;
+    z-index: 999;
+    right: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 30px 30px;
+    margin-left: 30px;
+    font-size: 35px;
+    background-color: transparent;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    transition: all .5s ease;
+    top: -1.9px;
+    text-shadow: 0 0 3px #000;
+  }
+  
+  label #cancel {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #check:checked~.sidebar {
+    left: 0;
+  }
+  
+  #check:checked~label #btn {
+    margin-left: 245px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  #check:checked~label #cancel {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #check:checked~label #user {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @media(max-width : 860px) {
+  
+    .sidebar {
+        height: auto;
+        width: 70px;
+        left: 0;
+        margin: 100px 0;
+    }
+  
+    header,
+    #btn,
+    #cancel {
+        display: none;
+    }
+  
+    span {
+        position: absolute;
+        margin-left: 23px;
+        opacity: 0;
+        visibility: hidden;
+    }
+  
+    .sidebar .link-sidebar {
+        height: 60px;
+    }
+  
+    .sidebar .link-sidebar i {
+        margin-left: -10px;
+    }
+  
+    .link-sidebar:hover {
+        width: 200px;
+        background: inherit;
+    }
+  
+    .sidebar .link-sidebar:hover span {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.imagem_container img{
+    width: 90%;
+    border-radius: 40px;
+    max-height: 600px;
+}
+
+.imagem_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.carro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 80vh;
+    background-color: #f7ede3;
+    border-radius: 50px;
+}
+
+.informacoes{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items:end;
+
+
+}
+
+.nome_marca{
+    position: absolute;
+    top: 200px;
+}
+
+.nome_marca h1{
+    color: #950000;
+    font-size: 60px;
+    margin: 0px;
+}
+
+.nome_marca h2{
+    color: #950000;
+    font-size: 35px;
+    margin: 0px;
+}
+
+.nome_marca h3{
+    color: #000000;
+    font-size: 35px;
+    margin: 0px;
+}
+
+.nome_marca p{
+    color: #000000;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.subinformacoes{
+    height: 30vh;
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20vh;
+    margin-right: -50px;
+}
+
+.direita{
+    height: 100%;
+    width:50%;
+    display: grid;
+    align-items: center;
+}
+
+.esquerda{
+    height: 100%;
+    width:50%;
+    display: grid;
+    align-items: center;
+
+}
+
+.esquerda h1{
+    margin-bottom: -50px;
+}
+
+.direita h1{
+    margin-bottom: -50px;
+}
+
+.esquerda p{
+    font-size: 25px;
+}
+
+.direita p{
+    font-size: 25px;
+
+}
+
+
+/* Descrição */
+.descricao{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.descricao_texto{
+    width: 70%;
+
+}
+
+.descricao_texto h1{
+    font-size: 50px;
+    margin: 0px;
+}
+
+.descricao_texto p{
+    text-indent: 72px;
+    font-size: 25px;
+}
+
+
+/*Rodapé */
+.rodape {
+    margin-top: 10vh;
+    height: 32vh;
+    width: 100%;
+    background-color: black;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.redes_sociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.redes_sociais img{
+    width: 80px;
+    border-radius: 100px;
+    margin-bottom: 25px;
+    transition: .09s;
+}
+
+.redes_sociais img:hover{
+    transform: scale(1.1);
+}
+
+.rodape p{
+    color: white;
+    font-size: 20px;
+    text-indent: 0px;
+}
+
+.rodape_info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape_info a{
+    color: white;
+    font-size: 20px;
+}
+
+.rodape_logo img{
+    width: 110px;
+    margin-bottom: 25px;
+}
+
+.botao {
+    position: absolute;
+    top: 75.5%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+.botao button{
+    background-color: #950000;
+    color: white;
+    height: 90px;
+    width: 210px;
+    border-radius: 30px;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    transition: all .3s;
+    cursor:pointer  ;
+}
+
+.botao button:hover {
+    background-color: black;
+    color: white;
+}

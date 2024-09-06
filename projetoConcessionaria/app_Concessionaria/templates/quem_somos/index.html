@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'quem_somos/style/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!--Links das Fontes e dos Icones-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>entregador</title>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <!--Links das Fontes e dos Icones-->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <input type="checkbox" id="check">
+
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+
+  <label for="user">
+    <a href="#"><i class="fas fa-user user-icon" id="user"></i></a>
+  </label>
+
+  <div class="overlay">
+  <h1>MISTERS MOTORS</h1>
+  </div>
+  
+  <div class="sidebar">
+
+    <header>Menu</header>
+   
+    <hr>
+
+    <a href="/" class="link-sidebar active">
+
+      <span>Home</span>
+    </a>
+
+    <hr>
+
+    <a href="/catalogo/" class="link-sidebar">
+
+      <span>Catálogo</span>
+    </a>
+
+    <hr>
+
+    <a href="/quem_somos/" class="link-sidebar">
+
+      <span>Quem somos</span>
+    </a>
+
+    <hr>
+
+    <a href="/servicos/" class="link-sidebar">
+
+      <span>Serviços</span>
+    </a>
+
+    <hr>
+
+    <a href="#" class="link-sidebar">
+
+      <span>Contato</span>
+    </a>
+
+  </div>
+  <!--Sidebar-->
+
+
+
+
+
+
+
+    <div class="fundo">
+        <img src="{% static 'quem_somos/img/fundo.jpg'%}" alt="">
+        <h2>Misters Motors</h2>
+        <h1>QUEM SOMOS NÓS?</h1>
+    </div>
+
+
+
+    <div class="conteudo_quem_somos">
+
+        <!-- CONTEUDO TÓPICOS -->
+        <div class="topicos">
+            <div id="topico1">
+                <div class="numero_quem_somos">
+                    <p>1</p>
+                </div>
+
+                <div class="texto_quem_somos">
+                    <h1>
+                        NOSSA HISTÓRIA
+                    </h1>
+
+                    <p>Fundada em 2024, a Misters Motors surgiu com a idéia de seis estudantes
+                        do Senac-RS, localizada em uma cidade do Rio Grande do Sul, Gravataí.
+                    </p>
+                    <p>Com o objetivo de cada dia sermos melhores e assim alcançarmos nosso apogeu
+                        da marca, e se tornando a melhor da região.
+                    </p>
+                </div>
+            </div>
+
+            <div id="topico2">
+                <div class="numero_quem_somos">
+                    <p>2</p>
+                </div>
+
+                <div class="texto_quem_somos">
+                    <h1>
+                        O QUE FAZEMOS
+                    </h1>
+
+                    <p>Na misters motors temos o objetivo de oferecer uma ampla seleção de veículos
+                        novos e usados, todos inspecionados e garantidos para atender aos mais altos padrões.
+                    </p>
+                    <p>Nossa plataforma online facilita a busca e a compra do seu próximo novo ou velho carro.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="topico3">
+                <div class="numero_quem_somos">
+                    <p>3</p>
+                </div>
+
+                <div class="texto_quem_somos">
+                    <h1>
+                        NOSSA EQUIPE
+                    </h1>
+
+                    <p>Nossa equipe é formada por 6 jovens estudantes do Téc. Informática do Senac-RS que com muito
+                        estudo e esforço realizaram mais um site de alta qualidade gráfica e funcional.
+                    </p>
+                    <p>Com a nossa equipe de alta qualidade, temos o objetivo de se tornamos os melhores.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="significado_nome">
+            <hr>
+            <h1>POR QUE MISTER MOTORS?</h1>
+            <div class="significado_imagem">
+                <img src="{% static 'quem_somos/img/significado_nome.png' %}" alt="">
+            </div>
+
+            
+            </h1>
+        </div>
+    </div>
+
+    <!------------------ RODAPÉ -------------------->
+    <div class="rodape">
+
+
+        <div class="redes_sociais">
+            <a href=""><img src="{% static 'quem_somos/img/instagram.png' %}" alt=""></a>
+            <a href=""><img src="{% static 'quem_somos/img/facebook.png' %}" alt=""></a>
+            <a href=""><img src="{% static 'quem_somos/img/twiter.png' %}" alt=""></a>
+        </div>
+
+
+        <div class="rodape_info">
+            <a href="">Termo de uso</a>
+            <a href="">Politíca de privacidade</a>
+        </div>
+        <p>Todos os direitos reservados</p>
+        <p>@2024</p>
+    </div>
+    
+    
+</body>
+
+</html>

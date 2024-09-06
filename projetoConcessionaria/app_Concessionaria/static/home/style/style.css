@@ -1,0 +1,404 @@
+/* VITOR KUNZE */
+body {
+  margin: 0;
+}
+
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+:root {
+  --accent-color: #fff;
+  --gradient-color: #FBFBFB;
+
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: whitesmoke;
+  z-index: 1;
+}
+
+.overlay h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 3em;
+  text-shadow: 0 0 3px #000;
+  color: #ffffff;
+}
+
+.user-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 0 0 3px #000;
+}
+
+.sidebar {
+
+  position: fixed;
+  z-index: 999;
+  width: 240px;
+  left: -240px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all .5s ease;
+
+}
+
+.sidebar header {
+  font-size: 28px;
+  color: #ffffff;
+  line-height: 70px;
+  text-align: center;
+  background-color: transparent;
+  user-select: none;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.sidebar .link-sidebar {
+
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: #ffffff;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-left: 5px solid transparent;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  transition: all .5s ease;
+}
+
+.link-sidebar:hover {
+  border-left: 5px solid #000;
+  color: #000000;
+  background: #f7ede3
+}
+
+.sidebar .link-sidebar i {
+  font-size: 23px;
+  margin-right: 16px;
+}
+
+.sidebar .link-sidebar span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#check {
+  display: none;
+}
+
+label #btn,
+label #cancel {
+  position: fixed;
+  z-index: 999;
+  left: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 50px;
+  margin: 30px 30px;
+  margin-left: 30px;
+  font-size: 35px;
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  transition: all .5s ease;
+  text-shadow: 0 0 3px #000;
+}
+
+label #user {
+  position: fixed;
+  z-index: 999;
+  right: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 50px;
+  margin: 30px 30px;
+  margin-left: 30px;
+  font-size: 35px;
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  transition: all .5s ease;
+  top: -1.9px;
+  text-shadow: 0 0 3px #000;
+}
+
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#check:checked~.sidebar {
+  left: 0;
+}
+
+#check:checked~label #btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#check:checked~label #cancel {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+#check:checked~label #user {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media(max-width : 860px) {
+
+  .sidebar {
+      height: auto;
+      width: 70px;
+      left: 0;
+      margin: 100px 0;
+  }
+
+  header,
+  #btn,
+  #cancel {
+      display: none;
+  }
+
+  span {
+      position: absolute;
+      margin-left: 23px;
+      opacity: 0;
+      visibility: hidden;
+  }
+
+  .sidebar .link-sidebar {
+      height: 60px;
+  }
+
+  .sidebar .link-sidebar i {
+      margin-left: -10px;
+  }
+
+  .link-sidebar:hover {
+      width: 200px;
+      background: inherit;
+  }
+
+  .sidebar .link-sidebar:hover span {
+      opacity: 1;
+      visibility: visible;
+  }
+
+}
+
+
+
+
+
+
+footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+  
+  /*marcas*/
+  
+  .marcas-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    font-family: "Montserrat", sans-serif;
+    color: gray;
+    font-size: 3.0rem;
+    margin-bottom: 5%;
+  }
+  
+  #marca1, #marca2, #marca3, #marca4 {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background-color: transparent;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: solid 5px;
+    border-color: gray;
+  }
+  
+  #marca1 img{
+    height: auto;
+    width: 110px;
+    border-radius: 100%;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  #marca2 img{
+    height: auto;
+    width: 150px;
+    border-radius: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  
+  #marca3 img{
+    height: auto;
+    width: 140px;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-top: 20px;
+  }
+  
+  #marca4 img{
+    height: auto;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 25px;
+    margin-top: 25px;
+  }
+  
+  /*modelos*/
+  
+  #modelos1 h2{
+  z-index: 2;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  font-size: 2.5rem;
+  margin-top: 140%;
+  }
+
+  #modelos2 h2{
+  z-index: 2;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  font-size: 2.5rem;
+
+ }
+
+  .modelos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+#modelos1, #modelos2 {
+    height: 90vh;
+    width: 60vh;
+    border-radius: 5%;
+    background-color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+#modelos1 img, #modelos2 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+    transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#modelos1:hover img, #modelos2:hover img {
+    transform: scale(1.1); /* Aplica o efeito de zoom */
+}
+
+#modelos1 button{
+  z-index: 2;
+  margin-top: 20%;
+  margin-left: 7%;
+  position: absolute;
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  border-color: white;
+  padding: 12px;
+  transition: background 100ms ease;
+}
+
+#modelos1 button:hover{
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+#modelos2 button{
+  z-index: 2;
+  margin-top: 130%;
+  margin-left: 7%;
+  position: absolute;
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  border-color: white;
+  padding: 12px;
+  transition: background 100ms ease;
+}
+
+#modelos2 button:hover{
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+#modelos1 h1{
+  z-index: 2;
+  margin-top: 12%;
+  margin-left: 7%;
+  position: absolute;
+  font-size: 2.5rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+#modelos2 h1{
+  z-index: 2;
+  margin-top: 122%;
+  margin-left: 7%;
+  position: absolute;
+  font-size: 2.2rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
